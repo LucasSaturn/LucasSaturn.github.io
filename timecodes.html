@@ -28,6 +28,9 @@ function leftPad(number, targetLength) {
 }
 
 function calculate(){
+	//set the framerate to the page
+	framerate = parseInt(document.getElementById("framerate").value);
+	
 	//get local variables of the text of in and out points
 	var inText = document.getElementById("in").value;
 	var outText = document.getElementById("out").value;
@@ -40,9 +43,11 @@ function calculate(){
 	var durationFloat;
 	var toOutput;
 	
+	//if one of the inputted timecodes are invalid
 	if(inFloat=="aaa" || outFloat=="aaa"){
 		toOutput = "Please input valid timecodes";
 	}
+	//otherwise return the timecode
 	else {
 		durationFloat = ((outFloat)-(inFloat));
 		toOutput = convertBackToTimecode(durationFloat);
@@ -135,8 +140,8 @@ function convertBackToTimecode(duration){
     <input type="text" id="duration" value="00:00:00:00"><br><br><br><br>
 	
 	  <hr>
-	  <p>DURATION TIMECODE:</p>
-	  <input type="text" id="framerate" value="00:00:00:00"><br><br>
+	  <p>FRAMERATE:</p>
+	  <input type="number" id="framerate" value="25"><br><br>
   </fieldset>
 </form>
 
