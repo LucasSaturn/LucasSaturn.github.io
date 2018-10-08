@@ -1,0 +1,142 @@
+<html>
+
+<head>
+
+<style>
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+</style>
+
+
+<script>
+var framerate = 25;
+document.getElementById("calc").onclick = calculate();
+function leftPad(number, targetLength) {
+    var output = number + '';
+    while (output.length < targetLength) {
+        output = '0' + output;
+    }
+    return String(output);
+}
+function calculate(){
+	//set the framerate to the page
+	framerate = parseInt(document.getElementById("framerate").value);
+	
+	//get local variables of the text of in and out points
+	var inText = document.getElementById("in").value;
+	var outText = document.getElementById("out").value;
+	
+	//turn those in and out text boxes into numbers to use
+	var inFloat = returnFloats(inText)
+	var outFloat = returnFloats(outText)
+	
+	//set variables 
+	var durationFloat;
+	var toOutput;
+	
+	//if one of the inputted timecodes are invalid
+	if(inFloat=="aaa" || outFloat=="aaa"){
+		toOutput = "Please input valid timecodes";
+	}
+	//otherwise return the timecode
+	else {
+		durationFloat = ((outFloat)-(inFloat));
+		toOutput = convertBackToTimecode(durationFloat);
+	}
+	
+	//use the result
+	document.getElementById("duration").value = String(toOutput);
+}
+function returnFloats(textbox){
+	var removedChars = (textbox.replace(/[^0-9:]/g, ''));
+	
+	var eachChunk = removedChars.split(":")
+	
+	if(checkEachPart(eachChunk[0],"h")=="aaa" ||
+	checkEachPart(eachChunk[1],"m")=="aaa" ||
+	checkEachPart(eachChunk[2],"s")=="aaa" ||
+	checkEachPart(eachChunk[3],"fr")=="aaa"){
+		return "aaa";
+	}
+	else {
+		var floatMain = (parseInt(eachChunk[0])*60*60)+
+		(parseInt(eachChunk[1])*60)+
+		(parseInt(eachChunk[2]))+
+		(parseInt(eachChunk[3])/framerate);
+		
+		return floatMain;
+	}
+}
+function checkEachPart(number,type){
+	if(type=="h" || type=="m" || type=="s"){
+		if(isNaN(number) || number>59){
+			return "aaa";
+		}
+	}
+	else if(type=="fr"){
+		if(isNaN(number) || number>framerate-1){
+			return "aaa";
+		}
+	}
+	
+}
+function convertBackToTimecode(duration){
+	var hours = Math.floor((duration/3600));
+	var minutes = Math.floor(((duration-(hours*3600))/60));
+	var seconds = Math.floor((duration-(hours*3600)-(minutes*60)));
+	var frames = Math.round((duration-(hours*3600)-(minutes*60)-seconds)*framerate);
+	
+	
+	
+	return (leftPad(hours, 2)+':'+
+	leftPad(minutes, 2)+':'+
+	leftPad(seconds, 2)+':'+
+	leftPad(frames, 2))
+}
+</script>
+
+
+
+
+<title>Timecode Calculator</title>
+
+</head>
+
+
+
+
+<body style="background-image: url('images/bg.png')">
+
+
+<div class=center>
+
+<table style="background-color:white; padding:5px; border: 3px outset" width="500" height="500">
+<tr><th>
+
+<p>Not implemented yet!</p> 
+
+</th></tr>
+
+
+
+
+<tr><th>
+	<a href="index.html"><p>Back to homepage...</p></a>
+</th></tr>
+
+
+</table>
+
+</div>
+
+
+
+
+</body>
+
+</html>
