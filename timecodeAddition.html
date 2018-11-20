@@ -1,0 +1,194 @@
+﻿<html>
+
+<head>
+
+<style>
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+</style>
+
+
+<script>
+
+var framerate = 25;
+
+document.getElementById("calc").onclick = calculate();
+
+function leftPad(number, targetLength) {
+    var output = number + '';
+    while (output.length < targetLength) {
+        output = '0' + output;
+    }
+    return String(output);
+}
+
+function calculate(){
+	var eachLineArray = ((document.getElementById('in').value).toString()).split('\n');
+
+	//set the framerate to the page
+	framerate = parseInt(document.getElementById("framerate").value);
+	
+	//set variables 
+	var durationFloat = 0;
+	var toOutput;
+
+	//find original output value
+	//var outText = document.getElementById("duration").value;
+	//var outFloat = returnFloats(outText)
+
+	//if(outFloat=="aaa"){
+		//toOutput = "ERROR PLEASE RESET";
+	//}
+	//else {
+		for(var i = 0; i < eachLineArray.length; i++){
+			//get local variables of the text of in point
+			var inText = (eachLineArray[i]).replace(/(\r\n|\n|\r)/gm,"");
+			if(inText!=""){
+				//turn that in text box into numbers to use
+				var inFloat = returnFloats(inText);
+
+				if(inFloat=="aaa"){
+					toOutput = "ERROR PLEASE RESET";
+				}
+
+				durationFloat = (durationFloat+inFloat);
+			}
+		}
+	//}
+	
+	//if one of the inputted timecodes are invalid
+	if(toOutput=="ERROR PLEASE RESET"){
+		//do nothing
+	}
+	//otherwise return the timecode
+	else {
+		toOutput = convertBackToTimecode(durationFloat);
+	}
+	
+	//use the result
+	document.getElementById("duration").value = String(toOutput);
+}
+
+function returnFloats(textbox){
+	var removedChars = (textbox.replace(/[^0-9:]/g, ''));
+	
+	var eachChunk = removedChars.split(":")
+	
+	if(checkEachPart(eachChunk[0],"h")=="aaa" ||
+	checkEachPart(eachChunk[1],"m")=="aaa" ||
+	checkEachPart(eachChunk[2],"s")=="aaa" ||
+	checkEachPart(eachChunk[3],"fr")=="aaa"){
+		return "aaa";
+	}
+	else {
+		var floatMain = (parseInt(eachChunk[0])*60*60)+
+		(parseInt(eachChunk[1])*60)+
+		(parseInt(eachChunk[2]))+
+		(parseInt(eachChunk[3])/framerate);
+		
+		return floatMain;
+	}
+}
+
+function checkEachPart(number,type){
+	if(type=="h" || type=="m" || type=="s"){
+		if(isNaN(number) || number>59){
+			return "aaa";
+		}
+	}
+	else if(type=="fr"){
+		if(isNaN(number) || number>framerate-1){
+			return "aaa";
+		}
+	}
+	
+}
+
+function convertBackToTimecode(duration){
+	var hours = Math.floor((duration/3600));
+	var minutes = Math.floor(((duration-(hours*3600))/60));
+	var seconds = Math.floor((duration-(hours*3600)-(minutes*60)));
+	var frames = Math.round((duration-(hours*3600)-(minutes*60)-seconds)*framerate);
+	
+	
+	
+	return (leftPad(hours, 2)+':'+
+	leftPad(minutes, 2)+':'+
+	leftPad(seconds, 2)+':'+
+	leftPad(frames, 2))
+}
+
+</script>
+
+
+
+
+<title>Timecode Calculator</title>
+
+</head>
+
+
+
+
+<body style="background-image: url('images/bg.png')">
+
+
+<div class=center>
+
+<table style="background-color:white; padding:5px; border: 3px outset" width="500" height="500">
+<tr><th>
+
+
+<form>
+  <fieldset>
+    <legend>Timecodes (25fps):</legend>
+    <br><br><p>TIMECODES TO ADD TOGETHER:</p>
+    <textarea id="in" rows="15" cols="12">00:00:00:00</textarea><br /><br />
+    <input type="button" id="calc" value="Add" onclick="calculate();">
+	
+    <p>TIMECODE OUTPUT:</p>
+    <input type="text" id="duration" value="00:00:00:00"><br><br><br><br>
+	
+	  <hr>
+	  <p>FRAMERATE:</p>
+	  <input type="number" id="framerate" value="25"><br><br>
+  </fieldset>
+</form>
+
+<p>This code is designed to allow you to copy and paste code straight from the word document EDL, and add up all the timecodes together. One possible use for this is to add together durations.</p><br />
+
+
+</th></tr>
+
+
+
+
+<tr><th>
+	<a href=""><p>Reset</p></a>
+	<a href="index.html"><p>Back to homepage...</p></a>
+</th>
+
+
+<th>
+	
+</th>
+
+
+</tr>
+
+
+</table>
+
+</div>
+
+
+
+
+</body>
+
+</html>
