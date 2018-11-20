@@ -28,6 +28,7 @@ function leftPad(number, targetLength) {
 }
 
 function calculate(){
+	//split each lines into an array
 	var eachLineArray = ((document.getElementById('in').value).toString()).split('\n');
 
 	//set the framerate to the page
@@ -37,29 +38,20 @@ function calculate(){
 	var durationFloat = 0;
 	var toOutput;
 
-	//find original output value
-	//var outText = document.getElementById("duration").value;
-	//var outFloat = returnFloats(outText)
+	for(var i = 0; i < eachLineArray.length; i++){
+		//get local variables of the text of in point
+		var inText = (eachLineArray[i]).replace(/(\r\n|\n|\r)/gm,"");
+		if(inText!=""){
+			//turn that in text box into numbers to use
+			var inFloat = returnFloats(inText);
 
-	//if(outFloat=="aaa"){
-		//toOutput = "ERROR PLEASE RESET";
-	//}
-	//else {
-		for(var i = 0; i < eachLineArray.length; i++){
-			//get local variables of the text of in point
-			var inText = (eachLineArray[i]).replace(/(\r\n|\n|\r)/gm,"");
-			if(inText!=""){
-				//turn that in text box into numbers to use
-				var inFloat = returnFloats(inText);
-
-				if(inFloat=="aaa"){
-					toOutput = "ERROR PLEASE RESET";
-				}
-
-				durationFloat = (durationFloat+inFloat);
+			if(inFloat=="aaa"){
+				toOutput = "ERROR PLEASE RESET";
 			}
+
+			durationFloat = (durationFloat+inFloat);
 		}
-	//}
+	}
 	
 	//if one of the inputted timecodes are invalid
 	if(toOutput=="ERROR PLEASE RESET"){
@@ -147,7 +139,7 @@ function convertBackToTimecode(duration){
 <form>
   <fieldset>
     <legend>Timecodes (25fps):</legend>
-    <br><br><p>TIMECODES TO ADD TOGETHER:</p>
+    <br><p>TIMECODES TO ADD TOGETHER:</p>
     <textarea id="in" rows="15" cols="12">00:00:00:00</textarea><br /><br />
     <input type="button" id="calc" value="Add" onclick="calculate();">
 	
@@ -160,7 +152,7 @@ function convertBackToTimecode(duration){
   </fieldset>
 </form>
 
-<p>This code is designed to allow you to copy and paste code straight from the word document EDL, and add up all the timecodes together. One possible use for this is to add together durations.</p><br />
+<p>This code is designed to allow you to copy and paste code straight from the word document EDL, and add up all the timecodes together. One possible use for this is to add together durations.</p>
 
 
 </th></tr>
@@ -169,7 +161,7 @@ function convertBackToTimecode(duration){
 
 
 <tr><th>
-	<a href=""><p>Reset</p></a>
+	<hr /><a href=""><p>Reset</p></a>
 	<a href="index.html"><p>Back to homepage...</p></a>
 </th>
 

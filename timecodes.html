@@ -28,29 +28,57 @@ function leftPad(number, targetLength) {
 }
 
 function calculate(){
+	//split each lines into an array
+	var inArray  = ((document.getElementById('in').value).toString()).split('\n');
+	var outArray = ((document.getElementById('out').value).toString()).split('\n');
+
+	//create new array with each stored value
+	var newArray = [];
+
 	//set the framerate to the page
 	framerate = parseInt(document.getElementById("framerate").value);
 	
-	//get local variables of the text of in and out points
-	var inText = document.getElementById("in").value;
-	var outText = document.getElementById("out").value;
-	
-	//turn those in and out text boxes into numbers to use
-	var inFloat = returnFloats(inText)
-	var outFloat = returnFloats(outText)
-	
 	//set variables 
-	var durationFloat;
 	var toOutput;
-	
+
+	var ERROR = "";
+
+	if(inArray.length!=outArray.length){
+		ERROR = "Amount of in points are different to out points"
+	}
+	else {
+		//should you ignore the last line?
+		var removeQUESTION = 0;
+		if(inArray[inArray.length-1]==""){
+			removeQUESTION = 1;
+		}
+
+		for(var i=0; i < inArray.length-removeQUESTION; i++){
+			var inText  =  (inArray[i]).replace(/(\r\n|\n|\r)/gm,"");
+			var outText = (outArray[i]).replace(/(\r\n|\n|\r)/gm,"");
+
+			if(inText!="" || outText1!="") {
+				var inFloat  = returnFloats(inText);
+				var outFloat = returnFloats(outText);
+
+				if(inFloat=="aaa" || outFloat=="aaa"){
+					ERROR = "Error in one of the inputted timecodes. Please check typed input.";
+				}
+				else {
+					durationFloat = ((outFloat)-(inFloat));
+					newArray[i] = convertBackToTimecode(durationFloat);
+				}
+			}
+		}
+	}
+
 	//if one of the inputted timecodes are invalid
-	if(inFloat=="aaa" || outFloat=="aaa"){
-		toOutput = "Please input valid timecodes";
+	if(ERROR!=""){
+		toOutput = ERROR;
 	}
 	//otherwise return the timecode
 	else {
-		durationFloat = ((outFloat)-(inFloat));
-		toOutput = convertBackToTimecode(durationFloat);
+		toOutput = newArray.join("\n");
 	}
 	
 	//use the result
@@ -130,21 +158,22 @@ function convertBackToTimecode(duration){
 <form>
   <fieldset>
     <legend>Timecodes (25fps):</legend>
-    <br><br><p>IN:</p>
-    <input type="text" id="in" value="00:00:00:00"><br>
-    <p>OUT:</p>
-    <input type="text" id="out" value="00:00:00:00"><br><br>
+    <br><p>IN:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    OUT:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	DURATION:</p>
+    <textarea id="in" rows="15" cols="12">00:00:00:00</textarea>
+    <textarea id="out" rows="15" cols="12">00:00:00:00</textarea>
+    <textarea id="duration" rows="15" cols="12">00:00:00:00</textarea><br /><br />
     <input type="button" id="calc" value="Calculate" onclick="calculate();">
 	
-    <p>DURATION TIMECODE:</p>
-    <input type="text" id="duration" value="00:00:00:00"><br><br><br><br>
-	
-	  <hr>
+    <hr>
 	  <p>FRAMERATE:</p>
 	  <input type="number" id="framerate" value="25"><br><br>
   </fieldset>
 </form>
 
+<p>This code is to allow you to input timecodes straight from the word document, and to copy and paste it into the text boxes above. This will generate the durations of those timecodes. </p>
+<p>To paste in the duration timecodes, copy and paste the textbox contents, select the vertical cells (1 column, multiple rows) on Microsoft Word, and then paste.</p>
 
 </th></tr>
 
@@ -152,8 +181,17 @@ function convertBackToTimecode(duration){
 
 
 <tr><th>
+	<hr /><a href=""><p>Reset</p></a>
 	<a href="index.html"><p>Back to homepage...</p></a>
-</th></tr>
+</th>
+
+
+<th>
+	
+</th>
+
+
+</tr>
 
 
 </table>
