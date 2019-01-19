@@ -2,16 +2,8 @@
 
 <head>
 
-<style>
-.center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%)
-}
-</style>
-
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
 <script>
 
@@ -151,10 +143,10 @@ function convertBackToTimecode(duration){
 
 <div class=center>
 
-<table style="background-color:white; padding:5px; border: 3px outset" width="500" height="500">
+<div id="table"><table>
 <tr><th>
 
-
+<div id="text">
 <form>
   <fieldset>
     <legend>Timecodes (25fps):</legend>
@@ -172,19 +164,17 @@ function convertBackToTimecode(duration){
   </fieldset>
 </form>
 
-<p>This code is to allow you to input timecodes straight from the word document, and to copy and paste it into the text boxes above. This will generate the durations of those timecodes. </p>
-<p>To paste in the duration timecodes, copy and paste the textbox contents, select the vertical cells (1 column, multiple rows) on Microsoft Word, and then paste.</p>
+<p>This code is to allow you to input timecodes straight from the word document, and to copy and paste it into the text boxes above.</p>
 
 </th></tr>
 
+</div>
 
 
 
-<tr><th>
-	<hr /><a href=""><p>Reset</p></a>
-	<a href="index.html"><p>Back to homepage...</p></a>
-</th>
+<tr><th><hr /><a href=""><img src="images/socialMedia/reset.png"></a></th></tr>
 
+<tr><th><a href="index.html"><img src="images/socialMedia/return.png"></a></th></tr>
 
 <th>
 	
@@ -196,7 +186,7 @@ function convertBackToTimecode(duration){
 
 </table>
 
-</div>
+</div></div>
 
 
 

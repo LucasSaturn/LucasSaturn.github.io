@@ -2,15 +2,8 @@
 
 <head>
 
-<style>
-.center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%)
-}
-</style>
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
 
 <script>
@@ -132,24 +125,28 @@ function convertBackToTimecode(duration){
 
 <div class=center>
 
-<table style="background-color:white; padding:5px; border: 3px outset" width="500" height="500">
+<div id="table"><table>
 <tr><th>
-
+<div id="text">
 
 <form>
+
+
   <fieldset>
     <legend>Timecodes (25fps):</legend>
-    <br><p>TIMECODES TO ADD TOGETHER:</p>
+    <p>TIMECODES TO ADD TOGETHER:</p>
     <textarea id="in" rows="15" cols="12">00:00:00:00</textarea><br /><br />
     <input type="button" id="calc" value="Add" onclick="calculate();">
 	
     <p>TIMECODE OUTPUT:</p>
-    <input type="text" id="duration" value="00:00:00:00"><br><br><br><br>
+    <input type="text" id="duration" value="00:00:00:00"><br><br>
 	
 	  <hr>
 	  <p>FRAMERATE:</p>
 	  <input type="number" id="framerate" value="25"><br><br>
   </fieldset>
+  
+
 </form>
 
 <p>This code is designed to allow you to copy and paste code straight from the word document EDL, and add up all the timecodes together. One possible use for this is to add together durations.</p>
@@ -160,10 +157,9 @@ function convertBackToTimecode(duration){
 
 
 
-<tr><th>
-	<hr /><a href=""><p>Reset</p></a>
-	<a href="index.html"><p>Back to homepage...</p></a>
-</th>
+<tr><th><hr /><a href=""><img src="images/socialMedia/reset.png"></a></th></tr>
+
+<tr><th><a href="index.html"><img src="images/socialMedia/return.png"></a></th></tr>
 
 
 <th>
@@ -176,7 +172,7 @@ function convertBackToTimecode(duration){
 
 </table>
 
-</div>
+</div></div></div>
 
 
 
