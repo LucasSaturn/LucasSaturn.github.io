@@ -36,16 +36,27 @@ legend {
        font-weight: normal;
 }
 
+p {
+       color:white;
+       
+       font-family: 'Open Sans', sans-serif;
+       font-size:14px;
+
+       font-weight: normal;
+}
+
 
 textarea {
          font-family: 'Open Sans', sans-serif;
          font-size:16px;
-         
-         width:95px;
-         height:225px;
+
+         width:135px;
+         height:255px;
          
          background-color:black;
          color:white;
+         
+         text-align:center;
 }
 
 input {

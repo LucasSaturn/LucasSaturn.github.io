@@ -5,6 +5,8 @@
 <link rel="stylesheet" type="text/css" href="mystyle.css">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
+
+
 <script>
 
 var framerate = 25;
@@ -150,12 +152,15 @@ function convertBackToTimecode(duration){
 <form>
   <fieldset>
     <legend>Timecodes (25fps):</legend>
-    <br><p>IN:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    OUT:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	DURATION:</p>
-    <textarea id="in"       rows="15" cols="15">00:00:00:00</textarea>
-    <textarea id="out"      rows="15" cols="15">00:00:00:00</textarea>
-    <textarea id="duration" rows="15" cols="15">00:00:00:00</textarea><br /><br />
+    
+    <br /><center><table>
+    <tr><th><p>IN:&nbsp;</p>        <textarea id="in"       rows="15" cols="15">00:00:00:00</textarea>  </th>
+        <th><p>OUT:&nbsp;</p>       <textarea id="out"      rows="15" cols="15">00:00:00:00</textarea>  </th>
+        <th><p>DURATION:&nbsp;</p>  <textarea id="duration" rows="15" cols="15">00:00:00:00</textarea>  </th>
+    </table></center>
+    
+
+
     <input type="button" id="calc" value="Calculate" onclick="calculate();">
 	
     <hr>
