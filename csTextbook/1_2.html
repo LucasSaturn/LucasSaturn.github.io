@@ -1,0 +1,68 @@
+<html>
+
+	<head>
+		<title>CS Textbook Test</title>
+
+		<link rel="stylesheet" type="text/css" href="cs_textbook_css.css">
+	</head>
+
+	<body>
+				
+				<center><div id="headerImage"><a href="csIndex.html"><img src="banner.png" /></a></div></center>
+			
+
+				<div id="header1"><p>1.2 Memory</p></div>
+
+				<div id="header2"><p>Pre-requisite</p></div>
+
+				<div id="bodyText">
+					<p>In this chapter, you will learn:</p>
+					<ul>
+						<li>The difference between RAM and ROM</li>
+						<li>Purpose of ROM</li>
+						<li>Purpose of RAM</li>
+						<li>The need for virtual memory</li>
+						<li>Flash memory, and what it is</li>
+					</ul>
+				</div>
+
+				<div id="header2"><p>RAM and ROM</p></div>
+
+				<div id="bodyText">
+					<p>Random Access Memory (hereinafter referred to as RAM) is a necessary part of a computer. In the processing cycle (fetch, decode, execute cycle), the CPU (central processing unit) pulls data from the RAM to process, then it sends it back to be stored.</p>
+
+					<p>RAM is volatile, meaning that it does not save data after it loses power. This means that once you power down a computer, the RAM loses all its data.</p>
+
+					<p>However, if the RAM loses its data, how can we boot up a computer again? The CPU will have no data. This is where ROM comes in.</p>
+
+					<hr />
+
+					<p>Read-Only Memory (hereinafter referred to as ROM) is another necessary part of a computer. Usually, motherboards are equipped with a small amount of read-only memory, that is non-volative. This means it keeps all of its data once powered off.</p>
+
+					<p>Every motherboard is supplied with a ROM chip, that contains the 'Basic Input/Output System' (the BIOS). This allows the computer to have it's boot sequence on a chip, that keeps it's data. This tells the computer how to turn on, and load things into RAM, ready for the CPU to process.</p>
+				</div>
+
+
+				<div id="header2"><p>Virtual Memory</p></div>
+
+				<div id="bodyText">
+					<p>A computer has to load relevent information into the RAM to be able to process that data. However, most machines are equipped with 4GB to 16GB of RAM in 2019. Some programs require more RAM than what is available to the CPU, yet they are able to run perfectly fine. This is where 'virtual memory' comes into play.</p>
+
+					<p>Virtual memory (also sometimes known a pagefile, or a swapfile) is a setting that is enabled by default on most modern operating systems. It allows the computer to use secondary storage (in this case, your hard drive or SSD) as a backup RAM location, if the primary storage (your RAM) becomes filled. This means your programs can continue to run, without crashing.</p>
+
+					<p>The benefits of this, is that the pagefile allows the computer to continue operating, even in the event that the RAM is filled. However, a drawback is that virtual memory is much slower than RAM, meaning that any applications that require fast fetching of data from RAM will be severely impacted.</p>
+				</div>
+
+				<div id="header2"><p>Flash Memory</p></div>
+
+				<div id="bodyText">
+					<p>Flash memory is a solid state, non-volatile storage medium. It can be electrically erased and reprogrammed with data.</p>
+
+					<p><img src="exclaim.png" /><strong><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Beyond GCSE Information</i></strong></p>
+
+					<p>EEPROM (electrically erasable programmable read-only memory) is used on ROM chips, as a way of permanently storing data (for instance, a motherboards boot sequence, or on old games console cartridges). However, NAND flash is used in USB flash drives, as a way of storing data.</p>
+				</div>
+
+	</body>
+
+</html>
