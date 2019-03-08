@@ -1,0 +1,183 @@
+<html>
+
+	<head>
+		<title>CS Textbook Test</title>
+
+		<link rel="stylesheet" type="text/css" href="cs_textbook_css.css">
+	</head>
+
+	<body>
+				
+				<center><div id="headerImage"><img src="test.png" /></div></center>
+			
+
+				<div id="header1"><p>1.7 Systems Software</p></div>
+
+				<div id="header2"><p>Pre-requisite</p></div>
+
+				<div id="bodyText">
+					<p>Systems software encompasses the operating system, system utilities and the BIOS/UEFI.</p>
+
+					<p><i>"Systems software manages all the actions of the computer and helps users to organise their programs and data and tell the computer what they want it to do."</i> ~ OCR Computer Science GCSE Student Book (page 181)</p>
+
+					<p>The BIOS is the Basic Input Output System controls the computer at start-up, to test system hardware, and to load the operating system. Each motherboard has its own custom firmware, to perform actions specific to that motherboard.</p>
+
+					<img src="1_7/1_bios.png" /><p>Figure 1 - A motherboards boot, showing the actions of the BIOS</p>
+				</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				<div id="header1"><p>Operating System</p></div>
+
+				<div id="bodyText">
+					<p>The operating system is designed to allow the hardware and software to communicate, manages these devices, controls all the processes, and ensures that everything is running smoothly.</p>
+				</div>
+
+				<div id="header2"><p>Roles of the operating system</p></div>
+
+				<div id="bodyText">
+					<p>The operating system acts as an interface between the hardware and the software (along with the software requesting access to input/output devices). It is the most important fundamental of all system software. Its roles include:</p>
+
+					<ul>
+						<li>Hiding the complexities of hardware from the end user</li>
+						<li>Managing the hardware present</li>
+						<li>Managing the RAM</li>
+						<li>Handling system interrupts</li>
+						<li>Sharing the input/output (I/O) between applications</li>
+						<li>API or software drivers, to manage peripherals</li>
+						<li>Controls files on the computer</li>
+					</ul>
+
+					<p>The operating system is required to manage the RAM (random access memory). Programs need to know where to access, some may need to be placed into the RAM, and some will be too large, and will require a swap file (on the hard drive, acting as virtual RAM). Memory management is the operating systems job.</p>
+
+					<p>The operating system is required to control the processes that are currently running, whether that be utilizing <i>'application program interfaces'</i> (APIs), or drivers.</p>
+
+					<p>The operating system needs to manage the peripherals that are connected as inputs or outputs. It communicates using software drivers.</p>
+
+					<p>Operating systems are required to control all the files on the computer, along with their permissions and file types. </p>
+
+					<p>The OS displays a user interface, whether this be a command line or a GUI, to allow the user to input data. </p>
+				</div>
+
+				<div id="header2"><p>Examples of operating systems</p></div>
+
+				<div id="bodyText">
+					<ul>
+						<li>Windows</li>
+						<li>Mac OS X</li>
+						<li>Ubuntu</li>
+						<li>iOS</li>
+						<li>Android</li>
+						<li>NeXTSTEP</li>
+						<li>BeOS</li>
+					</ul>
+				</div>
+
+				
+
+
+				<div id="header2"><p>Memory and Processor Management</p></div>
+
+				<div id="bodyText">
+					<p>The OS allocates memory between the different programs at the same time. Programmers don't need to know where their data is being stored, only that it is.</p>
+
+					<p>Similarly, the OS manages the events on the processor, and schedules tasks to run. It creates the illusion of multitasking (on single core/thread CPUs). </p>
+				</div>
+
+
+
+
+
+
+
+				<div id="header2"><p>'Interrupt-driven'</p></div>
+
+				<div id="bodyText">
+					<p>Most modern operating systems are interrupt-driven. This means that there is a task that requires the computers immediate attention, and instead the CPU should act upon the interrupt task. Once it is finished, it returns to what it was doing. This is part of the Interrupt Handler (or the Interrupt Service Routine, the ISR).</p>
+
+					<p>There are two types of interrupts:</p>
+
+					<ul>
+						<li>Hardware interrupts are used by devices that require attention to the CPU. These include keyboard strokes and mouse triggers. </li>
+						
+						<li>Software interrupts are caused either by special instruction sets which occur when the software is executed. </li>
+					</ul>
+
+					<p>For instance, if you try and divide by zero, it will cause an exception, which will be caught by the OS to abort the instruction.</p>
+				</div>
+
+
+
+
+
+
+				<div id="header2"><p>User Interface</p></div>
+
+				<div id="bodyText">
+					<p>Operating systems give the user a user interface, to allow the user to interact with the machine. There are many types of user interface:</p>
+
+					<ul>
+						<li>A CLI, or command line interface, is a primitive but powerful tool. It displays only text on-screen, and the user would have to type a command followed by the Return key. It is powerful, as the computer follows the exact command, allowing complex tasks to be performed with ease.</li>
+
+						<li>A GUI, or Graphical User Interface is made up of “windows” that have a more complex, image based user interface. It is simple and intuitive to use, and many tasks are much easier to perform, without memorizing commands. However, it requires extensive system resources, and may even block of easy access to complex commands.</li>
+					</ul>
+				</div>
+
+
+
+
+
+
+
+
+				<div id="header1"><p>Application software</p></div>
+
+				<div id="bodyText">
+					<p>Applications are pieces of software designed to run on the system, through the system software.</p>
+				</div>
+
+				<div id="header2"><p>Utility software</p></div>
+
+				<div id="bodyText">
+					<p>Utility software is system software designed to help analyse, configure, optimize or maintain a computer. Examples of utility software include:</p>
+
+					<ul>
+						<li><strong>Antivirus software</strong> - Protects the computer from viruses and malware</li>
+						<li><strong>Defragmenter</strong>  - Defragments the hard drive</li>
+						<li><strong>Virtualization software</strong> - allows you to run virtual machines inside the computer.</li>
+						<li><strong>File management</strong> - software to allow the user to manage files</li>
+						<li><strong>Diagnostic Utility</strong> - be able to analyse how a computer is running</li>
+						<li><strong>Calendar application</strong> - allows the same functionality as a real calendar; scheduling</li>
+					</ul>
+
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/8oMmtm4zJ2E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+					<p>Antivirus software is covered in topic 1.6; suffice to say, malware and viruses (malicious applications) can infect a computer system. As such, anti-virus software is designed to protect against malicious code.</p>
+
+					<p>Hard drives become fragmented, meaning that sequential data is stored on different parts of the hard drive platter. This means it takes longer for the computer system to load data off of the drive. A way to fix this is by using defragmentation software, that moves data closer to other related data, speeding up the access times of the disk.</p>
+
+					<p>Some software can only run on other operating systems. As such, virtualization software is designed to allow the user to run a sub-operating system, allowing different software packages to be ran.</p>
+
+					<p>A file manager such as Windows Explorer allows the user to manage, create, delete, move and rename files.</p>
+
+					<p>If there is a problem with the computer's operating system, diagnostic software allows the user to view information about the system; this may be as simple as CPU and RAM usage, whilst other diagnostic software might be more involved, with showing you which specific services and software APIs are running.</p>
+
+					<p>Calendar software allows the user to track events like a real calendar. Calendar software can have specific 'smart' features, such as reminders and alarms.</p>
+				</div>
+		
+
+	</body>
+
+</html>

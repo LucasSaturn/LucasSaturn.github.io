@@ -15,6 +15,10 @@ img {
   max-width: 100%;
 }
 
+iframe {
+  max-width: 100%;
+}
+
 #bodyText {
   font-size: 16px;
   color : #ffffff;
