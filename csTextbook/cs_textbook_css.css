@@ -8,7 +8,7 @@ body {
 
   margin: auto;
 
-  padding: 15px;
+  padding: 38px;
 }
 
 img {
@@ -18,6 +18,31 @@ img {
 iframe {
   max-width: 100%;
 }
+
+
+
+
+a:link {
+  color:#e6ccff;
+}
+
+
+a:visited {
+  color:#b3e6ff;
+}
+
+a:hover {
+  color:#ccffdd;
+}
+
+a:active {
+  color:#b3e6ff;
+}
+
+
+
+
+
 
 #bodyText {
   font-size: 16px;
