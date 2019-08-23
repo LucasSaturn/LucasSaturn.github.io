@@ -31,9 +31,17 @@
 				<div id="bodyText">
 					<p>Random Access Memory (hereinafter referred to as RAM) is a necessary part of a computer. In the processing cycle (fetch, decode, execute cycle), the CPU (central processing unit) pulls data from the RAM to process, then it sends it back to be stored.</p>
 
-					<p><img src="exclaim.png" /><strong><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Beyond GCSE Information</strong> &nbsp;&nbsp;~&nbsp;&nbsp;
+					
 
-					Different RAM types have different speeds. DDR3 usually runs at 1333MHz, whilst DDR4's stock maximum clock speed is 2133MHz. You can also overclock RAM, to allow your processor to access data stored on it faster, giving a system a boost in processor performance.</i></p>
+
+					<div id="beyondGCSE"><p><img src="exclaim.png" /><strong><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Beyond GCSE Information</strong> &nbsp;&nbsp;~&nbsp;&nbsp;
+
+					Different RAM types have different speeds. DDR3 usually runs at 1333MHz, whilst DDR4's stock maximum clock speed is 2133MHz. You can also overclock RAM, to allow your processor to access data stored on it faster, giving a system a boost in processor performance.</i></p></div>
+
+					
+
+
+
 
 					<p>RAM is volatile, meaning that it does not save data after it loses power. This means that once you power down a computer, the RAM loses all its data.</p>
 
@@ -41,30 +49,69 @@
 
 					<hr />
 
-					<p>Read-Only Memory (hereinafter referred to as ROM) is another necessary part of a computer. Usually, motherboards are equipped with a small amount of read-only memory, that is non-volative. This means it keeps all of its data once powered off.</p>
+					<p>Read-Only Memory (hereinafter referred to as ROM) is another necessary part of a computer. Usually, motherboards are equipped with a small amount of read-only memory, that is non-volatile. This means it keeps all of its data once powered off.</p>
 
-					<p>Every motherboard is supplied with a ROM chip, that contains the 'Basic Input/Output System' (the BIOS). This allows the computer to have it's boot sequence on a chip, that keeps it's data. This tells the computer how to turn on, and load things into RAM, ready for the CPU to process.</p>
+					<p>Every motherboard is supplied with a ROM chip. This contains the <i>bootstrap</i>; this is the very first instructions for the computer to start. This means it checks that the hardware is present and functioning correctly, and loads the the 'Basic Input/Output System' (the BIOS). The software that is contained on the ROM chip is called <i>firmware</i>. This tells the computer how to turn on, and load things into RAM, ready for the CPU to process.</p>
+
+					<p>Read-Only Memory can also be utilized in embedded systems to hold the program data. Additionally, on older games consoles, such as the Sega Megadrive, catridges contain a ROM chip that has program data, and tells the system how to boot. </p>
+
+					<hr />
+
+					<iframe width="640" height="360" src="https://www.youtube.com/embed/tsH7IGcWSLg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</div>
+
+
+
+
+
+
+
 
 
 				<div id="header2"><p>Virtual Memory</p></div>
 
 				<div id="bodyText">
-					<p>A computer has to load relevent information into the RAM to be able to process that data. However, most machines are equipped with 4GB to 16GB of RAM in 2019. Some programs require more RAM than what is available to the CPU, yet they are able to run perfectly fine. This is where 'virtual memory' comes into play.</p>
+					<p>A computer has to load relevent information into the RAM to be able to process that data. However, most machines are equipped with 4GB to 16GB of RAM. Some programs require more RAM than what is available to the CPU, yet they are able to run perfectly fine. This is where 'virtual memory' comes into play.</p>
 
 					<p>Virtual memory (also sometimes known a pagefile, or a swapfile) is a setting that is enabled by default on most modern operating systems. It allows the computer to use secondary storage (in this case, your hard drive or SSD) as a backup RAM location, if the primary storage (your RAM) becomes filled. This means your programs can continue to run, without crashing.</p>
 
 					<p>The benefits of this, is that the pagefile allows the computer to continue operating, even in the event that the RAM is filled. However, a drawback is that virtual memory is much slower than RAM, meaning that any applications that require fast fetching of data from RAM will be severely impacted.</p>
+
+					<p>Application processes cannot run from the secondary storage, they have to be moved back to the primary storage/RAM. So, as a process isn't running, it is pushed out of the RAM and into the virtual memory location. Then, when a process is required to run, it is pushed back into the RAM, and another process is pushed out.</p>
+
+					
+
+					<iframe width="640" height="360" src="https://www.youtube.com/embed/qr6IPzYW1eY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</div>
+
+
+
+
+
+
+
+
+
 
 				<div id="header2"><p>Flash Memory</p></div>
 
 				<div id="bodyText">
-					<p>Flash memory is a solid state, non-volatile storage medium. It can be electrically erased and reprogrammed with data.</p>
+					<p>Flash memory is a solid state, non-volatile storage medium. It can be electrically erased and reprogrammed with data. Flash memory is becoming more and more widespread, with it being exclusively found on a motherboard to contain the bootstrap, used for mobile phones as an alternative to a traditional hard disk drive, used in Solid State Drives (or SSDs) as a faster storage medium, and finally in some games consoles to store game data.</p>
 
-					<p><img src="exclaim.png" /><strong><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Beyond GCSE Information</strong> &nbsp;&nbsp;~&nbsp;&nbsp;
+					<p>More information about the benefits and drawbacks of solid state as a medium can be found in topic <a href="1_3.html">1.3 Storage</a>.</p>
 
-					EEPROM (electrically erasable programmable read-only memory) is used on ROM chips, as a way of permanently storing data (for instance, a motherboards boot sequence, or on old games console cartridges). However, NAND flash is used in USB flash drives, as a way of storing data.</i></p>
+					
+
+
+					<div id="beyondGCSE"><p><img src="exclaim.png" /><strong><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Beyond GCSE Information </strong> &nbsp;&nbsp;~&nbsp;&nbsp;
+
+					EEPROM (electrically erasable programmable read-only memory) is used on ROM chips, as a way of permanently storing data (for instance, a motherboards boot sequence, or on old games console cartridges). However, NAND flash is used in USB flash drives, as a way of storing data.</i></p></div><br />
+
+
+
+
+
+					<iframe width="640" height="360" src="https://www.youtube.com/embed/djPYjHK3JH0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</div>
 
 	</body>

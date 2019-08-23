@@ -1,9 +1,9 @@
 html {
-    background-color: #000000;
+    background-color: #1f1d1c;
 }
 
 body {   
-  background: #17181c;
+  background: #1b1818;
   max-width: 1280px;
 
   margin: auto;
@@ -18,6 +18,11 @@ img {
 
 iframe {
   max-width: 100%;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  display: flex;
 }
 
 
@@ -47,7 +52,32 @@ a:active {
 
 #bodyText {
   font-size: 16px;
-  color : #ffffff;
+  color : #e8e6e3;
+
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  background: #1f1d1c;
+
+}
+
+#beyondGCSE {
+  margin: auto;
+
+  padding-left: 12%;
+  padding-right: 12%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+  border-radius: 500px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #e8e6e3;
+
+
+  background: #361716;
 }
 
 #header1 {
